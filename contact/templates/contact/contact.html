@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center ">
+    <h2 style="font-family: 'Parkinsans'; font-weight:bold;">__Contact Me__</h2>
+</div>
+<div class="container" style="max-width: 500px; font-family:Poppins">
+    <form action="{% url 'contact_reverse' %}" method="POST" id="contactForm">
+        {% csrf_token %}
+        {{ contact_form }}
+        <div class="d-flex justify-content-center align-items-center mt-3">
+            <button type="submit"
+                style="background-color: #387f39; color: white; font-family: 'Parkinsans'; padding: 10px 20px; border: none; border-radius: 2px; outline: none; cursor: pointer;">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Form Submitted</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Thanks for submitting the form!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Show the Modal if Success -->
+{% if success_message %}
+<script>
+    var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Load Static CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Font Awesome CDN for icons -->
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid" style="height: 100vh; overflow: hidden;">
+        <div class="row h-100 align-items-start">
+            <!-- Left Section: Fixed Height -->
+            <div class="col-3 d-flex justify-content-center align-items-center" id="col1"
+                style="height: 100vh; overflow: hidden;">
+                <ul class="ul-styles">
+                    <a href="{% url 'home' %}">
+                        <li>Home</li>
+                    </a>
+                    <a href="{% url 'experience' %}">
+                        <li>Experience</li>
+                    </a>
+                    <a href="{% url 'projects' %}">
+                        <li>Projects</li>
+                    </a>
+                    <a href="{% url 'research_papers' %}">
+                        <li>Papers</li>
+                    </a>
+                    <a href="{% url 'show_books_reverse' %}">
+                        <li>books</li>
+                    </a>
+                    <a href="{% url 'contact_reverse' %}">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </div>
+
+            <!-- Right Section: Starts in Middle -->
+            <div class="col-9 d-flex flex-column" id='col2'
+                style="height: 100vh; overflow-y: auto; position: relative; padding-top: 30vh;">
+                <div class="social-icons" style="position: absolute; top:20px; right:20px">
+                    <a href="https://github.com/rupeshadhikari201" target="_blank" class="github"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rupesh-kr-yadav-2b1a9b208/" target="_blank" class="linkedin"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="mailto:rupeshaadhikari1@gmail.com" target="_blank" class="gmail"><i
+                            class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/deamoneslayer/" target="_blank" class="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+
+                {% block content %}
+                <!-- block specific content -->
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Static JS, Jquery and Popper -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'jquery-3.7.1.min.js' %}"></script>
+</body>
+
+</html>

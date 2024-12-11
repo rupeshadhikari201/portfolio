@@ -1,0 +1,42 @@
+<!-- extends base.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center ">
+    <h2 style="font-family: 'Parkinsans'; font-weight:bold;">__projects__</h2>
+</div>
+<div class="container mt-4">
+    {% for project in projects %}
+    <div class="row mb-4">
+        <div class="col-md-6 d-flex align-items-center">
+            <!-- Image Section -->
+            <img src="{{ project.image.url }}" class="img-fluid rounded" alt="Project Image">
+        </div>
+        <div class="col-md-6">
+            <!-- Content Section -->
+            <div class="card-body">
+                <h5 class="card-title" style="font-family: 'Poppins'">{{ project.title }}</h5>
+                <p class="card-text text-justify" style="font-family: 'Parkinsans';">{{ project.description }}</p>
+                <p class="card-text">
+                    <strong>Tags:</strong>
+                    {% for tag in project.tags.all %}
+                    <span class="badge" style="background-color: #387f39;">{{ tag.name }}</span>
+                    {% endfor %}
+                </p>
+                <div class="d-flex">
+                    <a href="{{ project.github_url }}" class="btn  me-2" target="_blank">
+                        <i class="fab fa-github"></i> <span
+                            style="font-weight: bold; font-family: 'Poppins'">GitHub</span>
+                    </a>
+                    <a href="{{ project.huggingface_url }}" class="btn " style="color: #24292e;" target="_blank">
+                        <i class="fa-solid fa-globe"></i><span class="ml-2"
+                            style="font-weight: bold; font-family: 'Poppins'">Live</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

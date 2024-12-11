@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="font-family: 'Poppins', sans-serif;">Books List</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for book in books %}
+        <div class="col-3">
+            <div class="card h-100 shadow-sm">
+                {% if book.cover_image %}
+                <img src="{{ book.cover_image.url }}" class="card-img-top" alt="{{ book.title }}" height="300" ,
+                    width="200">
+                {% else %}
+                <img src="{% static 'default_cover.jpg' %}" class="card-img-top" alt="{{ book.title }}" height="300">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

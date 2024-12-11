@@ -1,0 +1,23 @@
+<!-- extends base.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center ">
+    <h2 style="font-family: 'Parkinsans'; font-weight:bold;">__about me__</h2>
+</div>
+<div class="container-fluid p-3 m-3 " style="background-color:transparent;">
+    <div class="row">
+        <div class="col-md-8 d-flex flex-column justify-content-center intro">
+            <h3 style="font-family: 'poppins';">Hello, I am <span style="color: #387f39; font-weight:bold">Rupesh Kumar
+                    Yadav</span></h3>
+            <h4>Python Developer</h4>
+            <a href="{% static 'assets/resume.pdf' %}" download="Rupesh_Kumar_Yadav_resume"> <button
+                    class="btn btn-dark">Resume</button></a>
+        </div>
+        <div class="col-md-4 ">
+            <img src="{% static 'assets/one.jpeg' %}" height="300" class="blended-image">
+        </div>
+    </div>
+</div>
+{% endblock %}

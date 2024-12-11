@@ -1,0 +1,49 @@
+<!-- extends base.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center ">
+    <h2 style="font-family: 'Parkinsans'; font-weight:bold;">__research papers__</h2>
+</div>
+
+<div class="container mt-4">
+    {% for paper in papers %}
+    <div class="row mb-4">
+        <div class="col-md-6 d-flex align-items-center">
+            <!-- Image Section -->
+            <img src="{{ paper.certificate.url }}" class="img-fluid rounded" alt="Project Image">
+            <!-- <iframe src="{{ paper.certificate.url }}" class="w-100" style="height: 500px;" frameborder="0"></iframe> -->
+            <!-- <embed src="{{ paper.certificate.url }}" type="application/pdf" class="w-100" style="height: 500px;" /> -->
+        </div>
+        <div class="col-md-6">
+            <!-- Content Section -->
+            <div class="card-body">
+                <h3 class="card-title" style="font-family: 'Poppins'; font-weight:bold;">{{paper.title }}</h3>
+                <h5 class="card-title" style="font-family: 'Parkinsans'">{{paper.conference_name }}</h5>
+                <p class="card-text text-justify" style="font-family: 'Parkinsans';">{{ paper.abstract }}</p>
+                <p class="card-text">
+                    <strong>Presentation Date :</strong> <em>{{paper.date}}</em><br>
+                    <strong>Authors : </strong>
+                    {% for author in paper.authors_list %}
+                    <span class="badge" style="background-color: rgb(56, 127, 57);">{{ author }}</span>
+                    {% endfor %}
+                </p>
+                <div class="d-flex">
+                    <a href="{{ paper.paper_file.url }}" class="btn me-2" style="border: 2px solid #387f39;"
+                        download="{{ experience.certificate.name }}">
+                        <i class="fa-solid fa-file custom-outline"
+                            style="color: #387f39; font-size:20px; transition: all 0.3s ease-in-out;"></i>
+                        <span class="ml-1" style="font-weight: bold; font-family: 'Poppins'; font-size: 20px;">Research
+                            Paper</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock content %}

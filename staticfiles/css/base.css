@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Parkinsans:wght@300..800&family=Sora:wght@100..800&display=swap");
+
+#col1 {
+	background-color: #387f39;
+}
+
+#col2 {
+	background-color: #a2ca71;
+}
+
+ul > a {
+	color: white;
+	list-style-type: none;
+	text-decoration: none;
+	margin: 5px;
+	font-family: "Parkinsans";
+	font-weight: bold;
+	font-size: large;
+	text-transform: lowercase;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	/* border: 3px solid rebeccapurple; */
+}
+
+ul > a:hover {
+	color: #a2ca71;
+}
+
+.ul-styles {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.social-icons {
+	display: flex; /* Arrange icons horizontally */
+	gap: 20px; /* Space between icons */
+	justify-content: center; /* Center the icons */
+	padding: 20px;
+}
+
+.social-icons a {
+	font-size: 30px;
+	color: #387f39;
+	text-decoration: none;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icons a:hover {
+	transform: translateY(-5px);
+}
+
+.blended-image img {
+	width: 100%;
+	height: auto;
+	mix-blend-mode: overlay;
+}
+
+/* Custom styles for the intro text */
+h3.intro {
+	font-family: "Parkinsans";
+	font-size: 1.8rem;
+	color: #333;
+}
+
+h3.intro span {
+	color: #387f39; /* Highlighted color for the name */
+}
+
+h4 {
+	font-family: "Parkinsans";
+	font-size: 0.5rem;
+	color: #333;
+}
+
+/* Image blending effect */
+.blended-image {
+	filter: sepia(30%) brightness(90%) saturate(120%);
+	border-radius: 10px;
+}
