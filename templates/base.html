@@ -16,10 +16,50 @@
 </head>
 
 <body>
+    <style>
+        .container-fluid{
+            padding-inline: 0;
+        }
+        .nav-bar{
+            position: static;
+            transition: transform 0.2s linear;
+        }
+        .menu-btn{
+            width:24px;
+            height: 24px;
+            top:24px;
+            left: 24px;
+            z-index: 900;
+        }
+        @media screen and (max-width:576px) {
+            .nav-bar{
+                position: absolute;
+                transform: translateX(-100%);
+                z-index: 100;
+                
+            }
+            .nav-bar.show{
+                transform: translate(0);
+
+            }
+
+        }
+    </style>
+    <script defer>
+            document.addEventListener('DOMContentLoaded',()=>{
+                const menuBtn = document.getElementById("menu-btn")
+            const menuContainer = document.getElementById("col1")
+            menuBtn.addEventListener('click',()=>{
+                menuContainer.classList.toggle("show")
+                console.log("clicked")
+            })
+            })
+           
+    </script>
     <div class="container-fluid" style="height: 100vh; overflow: hidden;">
-        <div class="row h-100 align-items-start">
+        <div class="d-flex h-100 align-items-start">
             <!-- Left Section: Fixed Height -->
-            <div class="col-3 d-flex justify-content-center align-items-center" id="col1"
+            <div class="nav-bar col-auto col-sm-3  d-flex justify-content-center align-items-center" id="col1"
                 style="height: 100vh; overflow: hidden;">
                 <ul class="ul-styles">
                     <a href="{% url 'home' %}">
@@ -42,9 +82,12 @@
                     </a>
                 </ul>
             </div>
-
+            <!-- humberger button -->
+            <div class="d-block d-sm-none menu-btn me-auto position-absolute" id="menu-btn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <!-- Right Section: Starts in Middle -->
-            <div class="col-9 d-flex flex-column" id='col2'
+            <div class="col-12 col-sm-9 d-flex flex-column" id='col2'
                 style="height: 100vh; overflow-y: auto; position: relative; padding-top: 30vh;">
                 <div class="social-icons" style="position: absolute; top:20px; right:20px">
                     <a href="https://github.com/rupeshadhikari201" target="_blank" class="github"><i
