@@ -16,130 +16,6 @@
 </head>
 
 <body>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Parkinsans:wght@300..800&family=Sora:wght@100..800&display=swap");
-
-        #col1 {
-            background-color: #387f39;
-        }
-
-        #col2 {
-            background-color: #a2ca71;
-        }
-
-        ul>a {
-            color: white;
-            list-style-type: none;
-            text-decoration: none;
-            margin: 5px;
-            font-family: "Parkinsans";
-            font-weight: bold;
-            font-size: large;
-            text-transform: lowercase;
-            padding: 0.5rem;
-            margin: 0.5rem;
-            /* border: 3px solid rebeccapurple; */
-        }
-
-        ul>a:hover {
-            color: #a2ca71;
-        }
-
-        .ul-styles {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .social-icons {
-            display: flex;
-            /* Arrange icons horizontally */
-            gap: 20px;
-            /* Space between icons */
-            justify-content: center;
-            /* Center the icons */
-            padding: 20px;
-        }
-
-        .social-icons a {
-            font-size: 30px;
-            color: #387f39;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px);
-        }
-
-        .blended-image img {
-            width: 100%;
-            height: auto;
-            mix-blend-mode: overlay;
-        }
-
-        /* Custom styles for the intro text */
-        h3.intro {
-            font-family: "Parkinsans";
-            font-size: 1.8rem;
-            color: #333;
-        }
-
-        h3.intro span {
-            color: #387f39;
-            /* Highlighted color for the name */
-        }
-
-        h4 {
-            font-family: "Parkinsans";
-            font-size: 0.5rem;
-            color: #333;
-        }
-
-        .container-fluid {
-            padding-inline: 0;
-        }
-
-        .nav-bar {
-            position: static;
-            transition: transform 0.2s linear;
-        }
-
-        .menu-btn {
-            width: 24px;
-            height: 24px;
-            top: 24px;
-            left: 24px;
-            z-index: 900;
-        }
-
-        @media screen and (max-width:576px) {
-            .nav-bar {
-                position: absolute;
-                transform: translateX(-100%);
-                z-index: 100;
-
-            }
-
-            .nav-bar.show {
-                transform: translate(0);
-
-            }
-
-        }
-    </style>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.getElementById("menu-btn")
-            const menuContainer = document.getElementById("col1")
-            menuBtn.addEventListener('click', () => {
-                menuContainer.classList.toggle("show")
-                console.log("clicked")
-            })
-        })
-
-    </script>
     <div class="container-fluid" style="height: 100vh; overflow: hidden;">
         <div class="d-flex h-100 align-items-start">
             <!-- Left Section: Fixed Height -->
@@ -171,8 +47,8 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
             <!-- Right Section: Starts in Middle -->
-            <div class="col-12 col-sm-9 d-flex flex-column" id='col2'
-                style="height: 100vh; overflow-x: hidden; position: relative; padding-top: 30vh;">
+            <div class="col-9 d-flex flex-column" id='col2'
+                style="height: 100vh; overflow-y: auto; position: relative; padding-top: 30vh;">
                 <div class="social-icons" style="position: absolute; top:20px; right:20px">
                     <a href="https://github.com/rupeshadhikari201" target="_blank" class="github"><i
                             class="fab fa-github"></i></a>
